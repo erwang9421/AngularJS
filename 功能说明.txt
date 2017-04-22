@@ -1,0 +1,29 @@
+功能说明：
+
+  实现了双向数据功能ng-model：可以从控制器或服务器读取数据、为文本域添加双向数据绑定。
+
+  左侧导航条app.js：ng-repeat实现，使用了ng-click和ng-show，可以隐藏菜单。
+<li class="ys1" ng-repeat="x in list">
+<a href="#" ng-click="toggle()">
+<ul class="nav" ng-show="listShow">
+
+
+  实现了数据排序功能app.js：可以实现对用户的关注，和对动态的评论等。点击支持他，会显示已支持，该用户的粉丝数量会增加一个。
+自定义添加粉丝addFans：
+$scope.fansNum=$scope.fansNum+1;
+document.getElementById("addFans").disabled=true;
+document.getElementById("addFans").value="已支持";
+  
+
+  用户还可以发表自己的动态、修改用户名、修改头像。
+
+angular.module('routeJs',['ngRoute'])
+	.config(['$routeProvider',function($routeProvider){
+		$routeProvider
+		.when('/',{template:
+
+//修改用户名
+var username=document.getElementById("username").value;
+$scope.userName=username;
+//修改用户头像
+var displaysrc=document.getElementById("displaysrc").value;
